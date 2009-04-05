@@ -40,7 +40,7 @@ class Editor_Core {
 	{
 		if (is_null($driver)) {
 			// Get default driver from config
-			$driver = Kohana::config('Editor.default_driver');
+			$driver = Kohana::config('editor.default_driver');
 		}
 		// Set driver name
 		$this->driver = 'Editor_'.$driver.'_Driver';

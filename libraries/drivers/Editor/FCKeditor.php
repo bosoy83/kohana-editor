@@ -36,7 +36,7 @@ class Editor_FCKeditor_Driver extends Editor_Driver {
 		if (!is_array($config)) {
 			$name = $config;
 			// Try to load config array with this profile name
-			if (($config = Kohana::config('editors/FCKeditor.'.$config)) == NULL) {
+			if (($config = Kohana::config('editors/fckeditor.'.$config)) == NULL) {
 				throw new Kohana_Exception('editor.undefined_profile', $name);
 			}
 		}
@@ -46,12 +46,12 @@ class Editor_FCKeditor_Driver extends Editor_Driver {
 
 		if (!isset($this->config['BasePath'])) {
 			// Use config param if there is no BasePath value in profile
-			$this->config['BasePath'] = Kohana::config('editors/FCKeditor.path');
+			$this->config['BasePath'] = Kohana::config('editors/fckeditor.path');
 		}
 
 		if (!isset($this->config['scriptName'])) {
 			// Use config param if there is no scriptName value in profile
-			$this->config['scriptName'] = Kohana::config('editors/FCKeditor.scriptName');
+			$this->config['scriptName'] = Kohana::config('editors/fckeditor.scriptName');
 		}
 
 		$this->InstanceName = $this->config['fieldName'];
